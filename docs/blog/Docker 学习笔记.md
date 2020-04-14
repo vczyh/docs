@@ -1,4 +1,5 @@
 ---
+title: Docker学习笔记
 date: 2020-2-2 14:38:44
 updated: 2020-2-3 14:51:40
 tags:
@@ -8,8 +9,6 @@ tags:
 ## 环境
 
 Ubuntu16.04
-
-<!--more-->
 
 ## 安装Docker CE
 
@@ -39,10 +38,7 @@ sudo apt-get install \
 3.添加Docker官方的GPG key
 
 ```bash
-# 官方 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# 中科大镜像
-curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 验证key
@@ -59,12 +55,6 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-# 中科大 速度快一点
-sudo add-apt-repository \
-   "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-
 ```
 
 5.更新`apt`包索引
@@ -758,6 +748,7 @@ docker-machine rm $(docker-machine ls -q) # Delete all VMs and their disk images
 ```json
 {
   "registry-mirrors": [
+    "https://d1zbnocg.mirror.aliyuncs.com",
     "http://141e5461.m.daocloud.io"
   ]
 }
